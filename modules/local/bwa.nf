@@ -15,6 +15,6 @@ process BWA {
     script:
     """
     bwa mem -t $task.cpus -M -R '@RG\\tID:${id}\\tSM:${id}\\tPL:ILLUMINA' $reference_genome \\
-    $reads | samtools view -bS -h -F 4 - > ${id}.map.bam
+    $bwa_index $reads | samtools view -bS -h -F 4 - > ${id}.map.bam
     """
 }
