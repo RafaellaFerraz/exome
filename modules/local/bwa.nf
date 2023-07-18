@@ -8,6 +8,7 @@ process BWA {
     tuple val(id), path(reads)
     path reference_genome
     path fai
+    path dictionary
 
     output:
     tuple val(id), path("*.map.bam") , emit: map_bam

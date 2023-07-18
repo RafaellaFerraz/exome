@@ -27,7 +27,7 @@ workflow ALIGMENT {
     fai
   
   main:
-    bwa_ch = BWA(reads_trimadas, reference_genome, fai)
+    bwa_ch = BWA(reads_trimadas, reference_genome, fai, dictionary)
     pireplace = PICARD_REPLACE(bwa_ch)
     pisort_ch = PICARD_SORT(pireplace)
     piord_ch = PICARD_ORDER(pisort_ch, reference_genome, dictionary)
