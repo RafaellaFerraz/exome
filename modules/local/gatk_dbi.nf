@@ -1,5 +1,4 @@
 process GATK_DBI {
-    publishDir "${params.outdir}/gatk_results", mode:'copy'
     container 'pegi3s/gatk-4'
 
     label 'process_medium'
@@ -9,7 +8,7 @@ process GATK_DBI {
     tuple val(id), path(vcf_indexado)
     
     output:
-    tuple val(id), path(DBIMP), emit: dbimp
+    tuple val(id), path("DBIMP"), emit: dbimp
     
     script:
     """
