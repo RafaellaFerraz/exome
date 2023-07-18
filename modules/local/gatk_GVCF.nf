@@ -12,7 +12,7 @@ process GATK_GVCF {
     path dictionary
     
     output:
-    tuple val(id), path("merged_gvcf.vcf"), emit: gvcf
+    tuple val(id), path("*_gvcf.vcf"), emit: gvcf
     
     script:
     """
@@ -21,6 +21,6 @@ process GATK_GVCF {
     -V gendb://${DBIMP} \\
     -G StandardAnnotation \\
     --annotate-with-num-discovered-alleles \\
-    -O merged_gvcf.vcf 
+    -O ${id}_gvcf.vcf 
     """
 }
