@@ -32,17 +32,17 @@ workflow EXOME {
     params.pac,
     params.sa
    )
-//   GATK_ANALYSIS(
-//    ALIGMENT.out.pidup_saida,
-//    params.reference_genome,
-//    params.twist_exome,
-//    params.dbsnp,
-//    params.thousand_genomes,
-//    params.indels,
-//    params.fai,
-//    params.dictionary,
-//    params.hapmap,
- //   params.omni,
-  //  params.phase
- //  )
+   GATK_ANALYSIS(
+    ALIGMENT.out.pidup_saida,
+    params.reference_genome,
+    params.twist_exome,
+    params.dbsnp,
+    params.thousand_genomes,
+    params.indels,
+    params.fai,
+    params.dictionary,
+    params.hapmap,
+    params.omni,
+    params.phase
+   )
 }
