@@ -40,6 +40,8 @@ workflow GATK_ANALYSIS {
     applybqsr_ch = GATK_APPLYBQSR(bam_aligment, base_recalibrator_ch, reference_genome, twist_exome, fai, dictionary)
     haplotypecaller_ch = GATK_HAPLOTYPECALLER(applybqsr_ch, dbsnp, twist_exome, reference_genome, fai, dictionary)
     index_ch = GATK_INDEX(haplotypecaller_ch)
+
+
     dbi_ch = GATK_DBI(haplotypecaller_ch, index_ch)
     gvcf_ch = GATK_GVCF(dbi_ch, reference_genome, fai, dictionary)
  
