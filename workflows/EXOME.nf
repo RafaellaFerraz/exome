@@ -25,6 +25,7 @@ workflow EXOME {
     QUALITY_ANALYSIS.out.reads_trimadas,
     params.reference_genome,
     params.dictionary
+    params.fai
    )
    GATK_ANALYSIS(
     ALIGMENT.out.pidup_saida,
